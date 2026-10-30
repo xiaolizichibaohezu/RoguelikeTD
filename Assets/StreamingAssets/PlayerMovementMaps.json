@@ -1,0 +1,1 @@
+{"movementList":{"keyBindings":[{"actionId":"moveUp","keyCode":119},{"actionId":"moveDown","keyCode":115},{"actionId":"moveLeft","keyCode":97},{"actionId":"moveRight","keyCode":100},{"actionId":"quit","keyCode":27}]}}
