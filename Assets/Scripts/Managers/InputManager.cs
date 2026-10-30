@@ -9,7 +9,6 @@ public class InputManager : MonoBehaviour
 
     private DataManager dataManager = null;
     private MovementList movementList = null;
-    private ActionId actionId = new ActionId();
     private Player player = null;
 
     private void ResetDataManager()
@@ -31,9 +30,9 @@ public class InputManager : MonoBehaviour
     void FixedUpdate()
     {
         MoveHandler();
-        if(Input.GetKeyDown(movementList.GetKeyCode(actionId.quit)))
+        if(Input.GetKeyDown(movementList.GetKeyCode(ActionId.quit)))
         {
-            EventManager.TriggerEvent("QuitGame");
+            EventManager.TriggerEvent(EventId.QuitGame);
         }
     }
 
@@ -42,15 +41,15 @@ public class InputManager : MonoBehaviour
         if(player == null) { player = FindObjectOfType<Player>();Debug.Log("Player found."); }
         if (player == null || movementList == null) { return; }
         Vector2 direction = new Vector2();
-        if (Input.GetKey(movementList.GetKeyCode(actionId.moveUp))) { direction += Vector2.up; }
-        if (Input.GetKey(movementList.GetKeyCode(actionId.moveDown))) { direction += Vector2.down; }
-        if (Input.GetKey(movementList.GetKeyCode(actionId.moveLeft))) { direction += Vector2.left; }
-        if (Input.GetKey(movementList.GetKeyCode(actionId.moveRight))) { direction += Vector2.right; }
+        if (Input.GetKey(movementList.GetKeyCode(ActionId.moveUp))) { direction += Vector2.up; }
+        if (Input.GetKey(movementList.GetKeyCode(ActionId.moveDown))) { direction += Vector2.down; }
+        if (Input.GetKey(movementList.GetKeyCode(ActionId.moveLeft))) { direction += Vector2.left; }
+        if (Input.GetKey(movementList.GetKeyCode(ActionId.moveRight))) { direction += Vector2.right; }
         if(direction != Vector2.zero)
         {
             direction.Normalize();
             direction *= player.GetSpeed();
-            Debug.Log("Moving player as direction: " + direction);
+            //Debug.Log("Moving player as direction: " + direction);
             player.Move(direction);
         }
     }

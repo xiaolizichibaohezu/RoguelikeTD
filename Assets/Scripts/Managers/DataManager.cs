@@ -11,7 +11,6 @@ class GameData
 
 public class DataManager : MonoBehaviour
 {
-    private ActionId actionId = new ActionId();
     private GameData gameData = null;
     public static DataManager instance = null;
 
@@ -48,14 +47,14 @@ public class DataManager : MonoBehaviour
     {
         switch (eventName)
         {
-            case "SaveData":
+            case EventId.SaveData:
                 SaveData();
                 break;
-            case "LoadData":
+            case EventId.LoadData:
                 LoadData();
                 break;
             default:
-                Debug.LogWarning("Event not handled: " + eventName);
+                Debug.LogWarning("DataManager: Event not handled: " + eventName);
                 break;
         }
     }
@@ -96,11 +95,13 @@ public class DataManager : MonoBehaviour
 
     private void GenerateData()
     {
-        gameData.movementList.BindMap(actionId.moveUp, KeyCode.W);
-        gameData.movementList.BindMap(actionId.moveDown, KeyCode.S);
-        gameData.movementList.BindMap(actionId.moveLeft, KeyCode.A);
-        gameData.movementList.BindMap(actionId.moveRight, KeyCode.D);
-        gameData.movementList.BindMap(actionId.quit, KeyCode.Escape);
+        gameData.movementList.BindMap(ActionId.moveUp, KeyCode.W);
+        gameData.movementList.BindMap(ActionId.moveDown, KeyCode.S);
+        gameData.movementList.BindMap(ActionId.moveLeft, KeyCode.A);
+        gameData.movementList.BindMap(ActionId.moveRight, KeyCode.D);
+        gameData.movementList.BindMap(ActionId.quit, KeyCode.Escape);
+        gameData.movementList.BindMap(ActionId.getTowerUp, KeyCode.E);
+        gameData.movementList.BindMap(ActionId.getTowerDown, KeyCode.Q);
         gameData.movementList.ToList();
         Debug.Log("Movement data generated.");
     }

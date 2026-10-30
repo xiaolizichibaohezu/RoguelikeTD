@@ -28,13 +28,13 @@ public class GameManager : MonoBehaviour
     {
         switch (eventName)
         {
-            case "QuitGame":
+            case EventId.QuitGame:
                 Debug.Log("Quitting game.");
                 Application.Quit();
-                EventManager.TriggerEvent("SaveData");
+                EventManager.TriggerEvent(EventId.SaveData);
                 break;
             default:
-                Debug.LogWarning("Event not handled: " + eventName);
+                Debug.LogWarning("GameManager: Event not handled: " + eventName);
                 break;
         }
     }

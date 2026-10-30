@@ -3,18 +3,30 @@ using System.Collections.Generic;
 using System.Windows.Input;
 using UnityEngine;
 
+public static class ActionId
+{
+    public static readonly string moveUp = "moveUp";
+    public static readonly string moveDown = "moveDown";
+    public static readonly string moveLeft = "moveLeft";
+    public static readonly string moveRight = "moveRight";
+    public static readonly string quit = "quit";
+    public static readonly string getTowerUp = "getTowerUp";
+    public static readonly string getTowerDown = "getTowerDown";
+
+}
+
+public static class DamageType
+{
+    public static readonly string normal = "normal";
+}
+
+public static class TowerType
+{
+    public static readonly string normal = "normal";
+}
 
 namespace Movements
 {
-    class ActionId
-    {
-        public string moveUp = "moveUp";
-        public string moveDown = "moveDown";
-        public string moveLeft = "moveLeft";
-        public string moveRight = "moveRight";
-        public string quit = "quit";
-
-    }
 
     [System.Serializable]
     public struct KeyBinding
@@ -66,6 +78,7 @@ namespace Movements
         }
     }
 }
+
 
 /*
 public class MoveUpCommand : ICommand
