@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
                 Application.Quit();
                 EventManager.TriggerEvent(EventId.SaveData);
                 break;
+            case EventId.DefaultEvent:
+                break;
             default:
                 Debug.LogWarning("GameManager: Event not handled: " + eventName);
                 break;

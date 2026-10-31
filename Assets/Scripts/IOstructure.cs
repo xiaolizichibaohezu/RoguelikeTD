@@ -1,9 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
+
+public static class EnemyType
+{
+    public const string defaultType = "default";
+    public const string normal = "normal";
+}
+
+public static class EventId
+{
+    public const string DefaultEvent = "DefaultEvent";
+    public const string SaveData = "SaveData";
+    public const string LoadData = "LoadData";
+    public const string QuitGame = "QuitGame";
+}
 
 public static class ActionId
 {
+    public static readonly string DefaultAction = "DefaultAction";
     public static readonly string moveUp = "moveUp";
     public static readonly string moveDown = "moveDown";
     public static readonly string moveLeft = "moveLeft";
@@ -16,12 +32,14 @@ public static class ActionId
 
 public static class DamageType
 {
-    public static readonly string normal = "normal";
+    public const string defaultType = "default";
+    public const string normal = "normal";
 }
 
 public static class TowerType
 {
-    public static readonly string normal = "normal";
+    public const string defaultType = "default";
+    public const string normal = "normal";
 }
 
 namespace Movements

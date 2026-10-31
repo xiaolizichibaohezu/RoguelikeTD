@@ -54,6 +54,8 @@ public class DataManager : MonoBehaviour
             case EventId.LoadData:
                 LoadData();
                 break;
+            case EventId.DefaultEvent:
+                break;
             default:
                 Debug.LogWarning("DataManager: Event not handled: " + eventName);
                 break;

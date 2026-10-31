@@ -3,13 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class EventId
-{
-    public const string SaveData = "SaveData";
-    public const string LoadData = "LoadData";
-    public const string QuitGame = "QuitGame";
-}
-
 public class EventManager : MonoBehaviour
 {
     public static event Action<string, object[]> OnEventTriggered;

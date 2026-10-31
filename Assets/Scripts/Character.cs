@@ -7,12 +7,12 @@ using UnityEngine;
 public abstract class Character : MonoBehaviour
 {
     private Rigidbody2D _rb2D = null;
-    private float maxHealthPoint = 100;
+    protected float maxHealthPoint = 100;
     private float healthPoint;
     private float moveSpeed;
-    private float maxMoveSpeed = 2;
+    protected float maxMoveSpeed = 2;
 
-    public Rigidbody2D rd2D
+    public Rigidbody2D rb2D
     {
         get
         {
@@ -59,7 +59,7 @@ public abstract class Character : MonoBehaviour
         return moveSpeed;
     }
 
-    private void ResetCharacter()
+    protected virtual void ResetCharacter()
     {
         healthPoint = maxHealthPoint;
         moveSpeed = maxMoveSpeed;
@@ -69,15 +69,9 @@ public abstract class Character : MonoBehaviour
     {
         if(direction != Vector2.zero)
         {
-            Rigidbody2D currentRb2D = rd2D;
+            Rigidbody2D currentRb2D = rb2D;
             if(currentRb2D != null){ _rb2D.MovePosition(_rb2D.position + direction * moveSpeed * Time.fixedDeltaTime); }
         }
-    }
-
-
-    private void Awake()
-    {
-        ResetCharacter();
     }
 
     // Start is called before the first frame update

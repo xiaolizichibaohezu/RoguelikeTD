@@ -59,6 +59,11 @@ public class Player : Character
         else { Debug.LogWarning("No tower to put down."); }
     }
 
+    private void Awake()
+    {
+        ResetCharacter();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
