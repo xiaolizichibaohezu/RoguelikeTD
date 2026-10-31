@@ -325,7 +325,7 @@ GameObject:
   m_Layer: 0
   m_HasEditorInfo: 1
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -415,6 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 585dc63aa528c5a4687aa6732f3e2586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nowTower: {fileID: 0}
 --- !u!61 &953143610
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -627,7 +628,7 @@ GameObject:
   m_Layer: 0
   m_HasEditorInfo: 1
   m_Name: Manager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -705,12 +706,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2005780565}
   - component: {fileID: 2005780564}
-  - component: {fileID: 2005780567}
   - component: {fileID: 2005780566}
+  - component: {fileID: 2005780568}
+  - component: {fileID: 2005780567}
   m_Layer: 0
   m_HasEditorInfo: 1
   m_Name: Tower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -844,8 +846,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 100
-  m_AngularDrag: 100
+  m_LinearDrag: 1000
+  m_AngularDrag: 1000
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -858,6 +860,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2005780568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005780563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c33f019ed8af95a41a1bd958e2a16494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _getTowerUp: 0
+  distance: 0.35
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -29,7 +29,7 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        MoveHandler();
+        KeyHandler();
         if(Input.GetKeyDown(movementList.GetKeyCode(ActionId.quit)))
         {
             EventManager.TriggerEvent(EventId.QuitGame);
@@ -52,5 +52,12 @@ public class InputManager : MonoBehaviour
             //Debug.Log("Moving player as direction: " + direction);
             player.Move(direction);
         }
+    }
+
+    private void KeyHandler()
+    {
+        MoveHandler();
+        if(Input.GetKeyDown(movementList.GetKeyCode(ActionId.getTowerUp))) { player.GetTowerUp(); }   
+        if(Input.GetKeyDown(movementList.GetKeyCode(ActionId.setTowerDown))) { player.SetTowerDown(); }
     }
 }

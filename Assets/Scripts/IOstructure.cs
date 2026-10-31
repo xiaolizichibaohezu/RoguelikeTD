@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Windows.Input;
 using UnityEngine;
 
 public static class ActionId
@@ -11,7 +10,7 @@ public static class ActionId
     public static readonly string moveRight = "moveRight";
     public static readonly string quit = "quit";
     public static readonly string getTowerUp = "getTowerUp";
-    public static readonly string getTowerDown = "getTowerDown";
+    public static readonly string setTowerDown = "setTowerDown";
 
 }
 

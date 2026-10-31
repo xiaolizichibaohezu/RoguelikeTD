@@ -34,7 +34,8 @@ public class DataManager : MonoBehaviour
         {
             movementList = new MovementList()
         };
-        LoadData();
+        //LoadData();
+        GenerateData();
         EventManager.SubscribeToEvent(OnEventTriggered);
     }
 
@@ -101,7 +102,7 @@ public class DataManager : MonoBehaviour
         gameData.movementList.BindMap(ActionId.moveRight, KeyCode.D);
         gameData.movementList.BindMap(ActionId.quit, KeyCode.Escape);
         gameData.movementList.BindMap(ActionId.getTowerUp, KeyCode.E);
-        gameData.movementList.BindMap(ActionId.getTowerDown, KeyCode.Q);
+        gameData.movementList.BindMap(ActionId.setTowerDown, KeyCode.Q);
         gameData.movementList.ToList();
         Debug.Log("Movement data generated.");
     }

@@ -3,9 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Player : Character
 {
+    [SerializeField]private Tower nowTower = null;
     protected override void Die()
     {
         Debug.Log("Die ");
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Tower"))
+        {
+            Tower tower = collision.GetComponent<Tower>();
+            if (tower != null)
+            {
+                nowTower = tower;
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Tower"))
+        {
+            Tower tower = collision.GetComponent<Tower>();
+            if (tower != null && tower == nowTower)
+            {
+                nowTower = null;
+            }
+        }
     }
 
     private void FaceToMouse()
@@ -16,7 +41,23 @@ public class Player : Character
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
+    public void GetTowerUp()
+    {
+        if (nowTower != null && !nowTower.getTowerUp)
+        {
+            nowTower.PickedUp(this);
+        }
+        else { Debug.LogWarning("No tower to pick up or already picked up."); }
+    }
 
+    public void SetTowerDown()
+    {
+        if (nowTower != null && nowTower.getTowerUp)
+        {
+            nowTower.PutDown();
+        }
+        else { Debug.LogWarning("No tower to put down."); }
+    }
 
     // Start is called before the first frame update
     void Start()
